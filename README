@@ -1,0 +1,49 @@
+Versionable
+===========
+
+Super fast and easy versioning for models and associations. Do cache lookups 
+using this fast version number instead of managing complex cache expiry.
+
+Versionable is intended for versioning of a model or an assocation and doesn't 
+currently provide any means of caching version numbers for normal model 
+instances.
+
+Examples
+========
+
+  # A simple User model with a User.cached_all method that returns all users 
+  # in the application. This method is cached and will automatically "expire" 
+  # whenever a record is saved or you call User.new_version.
+
+  class User < ActiveRecord::Base
+    extend Versionable
+    
+    after_save { new_version }
+    
+    def self.cached_all
+      # reference version in cache keys
+      Rails.cache.fetch("User.cached_all:#{version}") { all }
+    end
+  end
+  
+  >> User.cached_all    # initial cache miss and cache fill
+  >> User.cached_all    # cache hit
+
+  >> User.new_version   # => 1224985243
+  >> User.cached_all    # new cache miss and cache fill
+  
+  >> User.first.save    # causing new_version to be called from after_save
+  >> User.cached_all    # new cache miss and cache fill
+
+
+  You can also use it on associations...
+
+
+Install
+=======
+
+./script/plugin install git://github.com/jqr/versionable.git
+
+
+Homepage: http://github.com/jqr/versionable/tree/master  
+Copyright (c) 2008 Elijah Miller <elijah.miller@gmail.com>, released under the MIT license.

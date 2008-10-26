@@ -1,3 +1,5 @@
+CACHE = Rails.cache
+
 # For extending models and assocations to provide an time based version number
 # for cache expiration by changing part of the key we lookup the cache by.
 module Versionable
@@ -5,7 +7,7 @@ module Versionable
   
   # Returns the current version of the assocation. Likely to be nil.
   def version
-    CACHE.get(version_cache_key)
+    CACHE.read(version_cache_key)
   end
 
   # Sets the version of this assocation to the current time in integer form.
@@ -13,7 +15,7 @@ module Versionable
     # the expiry needs to be longer than any page that might use this as a
     # cache key.
     time = Time.now.to_i
-    CACHE.set(version_cache_key, time, TTL)
+    CACHE.write(version_cache_key, time, TTL)
     time
   end
 

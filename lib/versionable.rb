@@ -15,7 +15,7 @@ module Versionable
     # the expiry needs to be longer than any page that might use this as a
     # cache key.
     time = Time.now.to_i
-    CACHE.write(version_cache_key, time, TTL)
+    CACHE.write(version_cache_key, time, :expires_in => TTL)
     time
   end
 

@@ -39,7 +39,15 @@ You can also use it on associations...
 
 == Install
 
-./script/plugin install git://github.com/jqr/versionable.git
+As a Rails plugin.
+
+  ./script/plugin install git://github.com/jqr/versionable.git
+
+Prefer gems?
+
+  gem sources -a http://gems.github.com
+  gem install jqr-versionable
+
 
 
 Homepage:: http://github.com/jqr/versionable/tree/master  

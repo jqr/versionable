@@ -1,5 +1,4 @@
-Versionable
-===========
+= Versionable
 
 Super fast and easy versioning for models and associations. Do cache lookups 
 using this fast version number instead of managing complex cache expiry.
@@ -8,8 +7,7 @@ Versionable is intended for versioning of a model or an assocation and doesn't
 currently provide any means of caching version numbers for normal model 
 instances.
 
-Examples
-========
+== Examples
 
   # A simple User model with a User.cached_all method that returns all users 
   # in the application. This method is cached and will automatically "expire" 
@@ -36,14 +34,13 @@ Examples
   >> User.cached_all    # new cache miss and cache fill
 
 
-  You can also use it on associations...
+You can also use it on associations...
 
 
-Install
-=======
+== Install
 
 ./script/plugin install git://github.com/jqr/versionable.git
 
 
-Homepage: http://github.com/jqr/versionable/tree/master  
-Copyright (c) 2008 Elijah Miller <elijah.miller@gmail.com>, released under the MIT license.
+Homepage:: http://github.com/jqr/versionable/tree/master  
+Copyright (c) 2008 Elijah Miller <mailto:elijah.miller@gmail.com>, released under the MIT license.

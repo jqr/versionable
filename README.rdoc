@@ -51,4 +51,4 @@ Prefer gems? Add this to your environment.rb and run the following command.
 
 
 Homepage:: http://github.com/jqr/versionable/tree/master  
-Copyright (c) 2008 Elijah Miller <mailto:elijah.miller@gmail.com>, released under the MIT license.
+License:: Copyright (c) 2008 Elijah Miller <mailto:elijah.miller@gmail.com>, released under the MIT license.

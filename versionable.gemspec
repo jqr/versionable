@@ -2,15 +2,15 @@
 
 Gem::Specification.new do |s|
   s.name = %q{versionable}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Elijah Miller"]
-  s.date = %q{2008-12-07}
+  s.date = %q{2009-02-09}
   s.description = %q{Simple versioning for Ruby objects using only the Rails cache.}
   s.email = %q{elijah.miller@gmail.com}
   s.extra_rdoc_files = ["CHANGELOG", "lib/versionable.rb", "README.rdoc"]
-  s.files = ["CHANGELOG", "init.rb", "lib/versionable.rb", "Rakefile", "README.rdoc", "Manifest", "versionable.gemspec"]
+  s.files = ["CHANGELOG", "init.rb", "lib/versionable.rb", "Manifest", "Rakefile", "README.rdoc", "spec/fake_cache.rb", "spec/spec_helper.rb", "spec/versionable.spec", "versionable.gemspec"]
   s.has_rdoc = true
   s.homepage = %q{}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Versionable", "--main", "README.rdoc"]

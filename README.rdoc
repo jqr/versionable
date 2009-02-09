@@ -3,7 +3,7 @@
 Super fast and easy versioning for models and associations. Do cache lookups 
 using this fast version number instead of managing complex cache expiry.
 
-Versionable is intended for versioning of a model or an assocation and doesn't 
+Versionable is intended for versioning of a model or an association and doesn't 
 currently provide any means of caching version numbers for normal model 
 instances.
 
@@ -14,7 +14,7 @@ instances.
   # whenever a record is saved or you call User.new_version.
 
   class User < ActiveRecord::Base
-    extend Versionable
+    versionable :cache => Rails.cache
     
     after_save { new_version }
     

@@ -1,6 +1,10 @@
 CHANGELOG
 init.rb
 lib/versionable.rb
+Manifest
 Rakefile
 README.rdoc
-Manifest
+spec/fake_cache.rb
+spec/spec_helper.rb
+spec/versionable.spec
+versionable.gemspec
